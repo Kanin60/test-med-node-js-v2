@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@100;200;400;500;700&display=swap');
+@import url(nav.css);
+/* VARIABLES IN HTML: */
+:root {
+    --light: #f9f7f2;
+    --medium: rgb(119, 117, 115);
+    --dark: rgb(53, 52, 51);
+    --black: rgb(20, 19, 19);
+    --obs: #ef561f;
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: var(--light);    
+    margin-left: 1rem;                   /*IF I USE THE BACKGROUND COLOR*/
+} 
