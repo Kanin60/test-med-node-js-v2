@@ -1,0 +1,4 @@
+node_modules
+.env
+#_* gør at alle filer og mapper som starter med _ ikke kommer med på github
+_*
