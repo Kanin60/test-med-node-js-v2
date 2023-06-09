@@ -1,25 +1,30 @@
 import express from "express"
 
-
 export const postRouter = express.Router()
 
-postRouter.get("/about", (req, res) => {
-   
+postRouter.get("/", (req, res) => {
     res.send('Hent alle poster')
 })
 
-postRouter.post("/about", (req, res) => {
+postRouter.post("/", (req, res) => {
     console.log("");
-    res.send('send alle poster')
+    res.send(`
+        ${req.body.firstname} 
+        ${req.body.lastname}
+        ${req.body.email}
+        ${req.body.address}
+        ${req.body.titles}
+        ${req.body.birthday}
+
+    `)
 })
 
-postRouter.put("/about", (req, res) => {
+postRouter.put("/", (req, res) => {
     console.log("");
     res.send('tilføj alle poster')
 })
 
-postRouter.delete("/about", (req, res) => {
+postRouter.delete("/", (req, res) => {
     console.log("");
     res.send('slet alle poster')
 })
-
