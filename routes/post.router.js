@@ -7,13 +7,13 @@ export const postRouter = express.Router()
 
 postRouter.get("/", (req, res) => { //HVORFOR VIRKER DET UDEN /POSTS?
     const song = new SongController() //class instans(kopi) - bliver til et object
-    console.log("Virker list?",song.list());
+    // console.log("Virker list?",song.list(req, res));
     return song.list(req, res)
 })
 
 postRouter.get("/:id([0-9]*)", (req, res) => { 
     const song = new SongController() //class instans(kopi) - bliver til et object
-    console.log("virker details", song.details());
+    // console.log("virker details", song.details());
     return song.details(req, res)
 })
 

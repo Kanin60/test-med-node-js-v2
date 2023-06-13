@@ -14,27 +14,29 @@ class SongController {
             if(err) {
                 console.error(err);
             } else {
-                res.send("Hej")
+                res.json(result)
                 // console.log(result);
             }
         })
     }
 
     details = (req, res) => {
+        // console.log(req, res);
         const id = req.params.id
         const sql = `SELECT s.id, s.title, s.content, a.name
                         FROM song s
                         JOIN artist a
-                        ON s.artist_id = a.id
-                        WHERE s.id = ?
+                        ON s.artist_id = a.id 
+                        WHERE s.id = ? 
                         ORDER BY a.name`
-        db.query(sql), {id}, (err, result) => {
+        console.log(req.params.id);
+        db.query(sql, [id], (err, result) => {
             if(err) {
                 console.error(err);
             } else {
                 res.json(result)
             }
-        }
+        })
     }
 
     create = () => {
