@@ -1,5 +1,6 @@
 import express from 'express'
-import { postRouter } from './Routes/post.router.js';
+import { songRouter } from './Routes/song.router.js';
+import { router  as InitRouter} from './Routes/init.sequelize.router.js';
 import dotenv from 'dotenv'
 dotenv.config();
 // TIL AT TJEKKE OM DET VIRKER (FRA VIDEO)
@@ -27,8 +28,9 @@ const app = express()
 
 
 app.use(express.urlencoded({ extended: true})) //læse form data
-app.use("/posts",postRouter)
-// app.use(songRouter)
+
+app.use(InitRouter)
+app.use(songRouter)
 
 app.use((req, res) => {
     res.status(404).send("Fejl 404. Siden blev ikke fundet!")
